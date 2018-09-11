@@ -8,22 +8,39 @@
 
 /* Begin PBXBuildFile section */
 		FE3E008D21139051002B6505 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3E008C21139051002B6505 /* AppDelegate.swift */; };
-		FE3E008F21139051002B6505 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3E008E21139051002B6505 /* ViewController.swift */; };
 		FE3E009221139051002B6505 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE3E009021139051002B6505 /* Main.storyboard */; };
 		FE3E009521139051002B6505 /* Migration.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE3E009321139051002B6505 /* Migration.xcdatamodeld */; };
 		FE3E009721139052002B6505 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE3E009621139052002B6505 /* Assets.xcassets */; };
 		FE3E009A21139052002B6505 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE3E009821139052002B6505 /* LaunchScreen.storyboard */; };
+		FE3E00A721139100002B6505 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3E00A621139100002B6505 /* Person.swift */; };
+		FE3E00A921139156002B6505 /* DataAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3E00A821139156002B6505 /* DataAccessor.swift */; };
+		FE3E00AC21139450002B6505 /* MappingModel.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = FE3E00AB21139450002B6505 /* MappingModel.xcmappingmodel */; };
+		FE3E00AE2113945D002B6505 /* MigrationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3E00AD2113945D002B6505 /* MigrationPolicy.swift */; };
+		FE3E00B0211EACAA002B6505 /* UrlParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3E00AF211EACAA002B6505 /* UrlParser.swift */; };
+		FEEACFB42143B0BD003738DD /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEACFB32143B0BD003738DD /* TabBarViewController.swift */; };
+		FEEACFB62143B0E2003738DD /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEACFB52143B0E2003738DD /* TabBarItem.swift */; };
+		FEEACFB82143B30C003738DD /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEACFB72143B30C003738DD /* AppColors.swift */; };
+		FEEACFBA2143B44D003738DD /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEACFB92143B44D003738DD /* TabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FE3E008921139051002B6505 /* Migration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Migration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE3E008C21139051002B6505 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FE3E008E21139051002B6505 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FE3E009121139051002B6505 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE3E009421139051002B6505 /* Migration.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Migration.xcdatamodel; sourceTree = "<group>"; };
 		FE3E009621139052002B6505 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE3E009921139052002B6505 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE3E009B21139052002B6505 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE3E00A621139100002B6505 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		FE3E00A821139156002B6505 /* DataAccessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAccessor.swift; sourceTree = "<group>"; };
+		FE3E00AA21139418002B6505 /* Migration1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Migration1.xcdatamodel; sourceTree = "<group>"; };
+		FE3E00AB21139450002B6505 /* MappingModel.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = MappingModel.xcmappingmodel; sourceTree = "<group>"; };
+		FE3E00AD2113945D002B6505 /* MigrationPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationPolicy.swift; sourceTree = "<group>"; };
+		FE3E00AF211EACAA002B6505 /* UrlParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlParser.swift; sourceTree = "<group>"; };
+		FEEACFB32143B0BD003738DD /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		FEEACFB52143B0E2003738DD /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		FEEACFB72143B30C003738DD /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		FEEACFB92143B44D003738DD /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +73,39 @@
 		FE3E008B21139051002B6505 /* Migration */ = {
 			isa = PBXGroup;
 			children = (
+				FE3E00AF211EACAA002B6505 /* UrlParser.swift */,
 				FE3E008C21139051002B6505 /* AppDelegate.swift */,
-				FE3E008E21139051002B6505 /* ViewController.swift */,
+				FE3E00A5211390C7002B6505 /* Core Data */,
+				FEEACFB22143B076003738DD /* View Controllers */,
 				FE3E009021139051002B6505 /* Main.storyboard */,
 				FE3E009621139052002B6505 /* Assets.xcassets */,
 				FE3E009821139052002B6505 /* LaunchScreen.storyboard */,
 				FE3E009B21139052002B6505 /* Info.plist */,
-				FE3E009321139051002B6505 /* Migration.xcdatamodeld */,
+				FEEACFB72143B30C003738DD /* AppColors.swift */,
 			);
 			path = Migration;
+			sourceTree = "<group>";
+		};
+		FE3E00A5211390C7002B6505 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				FE3E00A621139100002B6505 /* Person.swift */,
+				FE3E00A821139156002B6505 /* DataAccessor.swift */,
+				FE3E009321139051002B6505 /* Migration.xcdatamodeld */,
+				FE3E00AB21139450002B6505 /* MappingModel.xcmappingmodel */,
+				FE3E00AD2113945D002B6505 /* MigrationPolicy.swift */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		FEEACFB22143B076003738DD /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FEEACFB32143B0BD003738DD /* TabBarViewController.swift */,
+				FEEACFB52143B0E2003738DD /* TabBarItem.swift */,
+				FEEACFB92143B44D003738DD /* TabBar.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +179,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE3E008F21139051002B6505 /* ViewController.swift in Sources */,
+				FEEACFB42143B0BD003738DD /* TabBarViewController.swift in Sources */,
+				FE3E00A721139100002B6505 /* Person.swift in Sources */,
+				FE3E00B0211EACAA002B6505 /* UrlParser.swift in Sources */,
+				FEEACFB82143B30C003738DD /* AppColors.swift in Sources */,
+				FEEACFB62143B0E2003738DD /* TabBarItem.swift in Sources */,
 				FE3E009521139051002B6505 /* Migration.xcdatamodeld in Sources */,
+				FE3E00AE2113945D002B6505 /* MigrationPolicy.swift in Sources */,
 				FE3E008D21139051002B6505 /* AppDelegate.swift in Sources */,
+				FEEACFBA2143B44D003738DD /* TabBar.swift in Sources */,
+				FE3E00AC21139450002B6505 /* MappingModel.xcmappingmodel in Sources */,
+				FE3E00A921139156002B6505 /* DataAccessor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +334,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6M4SD4S7Z6;
+				DEVELOPMENT_TEAM = 6SLEBG5JCF;
 				INFOPLIST_FILE = Migration/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -303,7 +352,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6M4SD4S7Z6;
+				DEVELOPMENT_TEAM = 6SLEBG5JCF;
 				INFOPLIST_FILE = Migration/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -343,9 +392,10 @@
 		FE3E009321139051002B6505 /* Migration.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				FE3E00AA21139418002B6505 /* Migration1.xcdatamodel */,
 				FE3E009421139051002B6505 /* Migration.xcdatamodel */,
 			);
-			currentVersion = FE3E009421139051002B6505 /* Migration.xcdatamodel */;
+			currentVersion = FE3E00AA21139418002B6505 /* Migration1.xcdatamodel */;
 			path = Migration.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
