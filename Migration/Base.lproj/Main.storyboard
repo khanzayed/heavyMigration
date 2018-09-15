@@ -77,7 +77,7 @@
         <!--Item 1-->
         <scene sceneID="7Dy-Wh-TpN">
             <objects>
-                <viewController id="8j6-Tg-9Us" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoaderViewController" id="8j6-Tg-9Us" customClass="LoaderViewController" customModule="Migration" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fyp-dg-9U7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

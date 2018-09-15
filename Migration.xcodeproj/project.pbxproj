@@ -17,6 +17,7 @@
 		FE3E00AC21139450002B6505 /* MappingModel.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = FE3E00AB21139450002B6505 /* MappingModel.xcmappingmodel */; };
 		FE3E00AE2113945D002B6505 /* MigrationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3E00AD2113945D002B6505 /* MigrationPolicy.swift */; };
 		FE3E00B0211EACAA002B6505 /* UrlParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3E00AF211EACAA002B6505 /* UrlParser.swift */; };
+		FE84E10C214D0FA800F26288 /* LoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE84E10B214D0FA800F26288 /* LoaderViewController.swift */; };
 		FEEACFB42143B0BD003738DD /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEACFB32143B0BD003738DD /* TabBarViewController.swift */; };
 		FEEACFB62143B0E2003738DD /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEACFB52143B0E2003738DD /* TabBarItem.swift */; };
 		FEEACFB82143B30C003738DD /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEACFB72143B30C003738DD /* AppColors.swift */; };
@@ -37,6 +38,7 @@
 		FE3E00AB21139450002B6505 /* MappingModel.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = MappingModel.xcmappingmodel; sourceTree = "<group>"; };
 		FE3E00AD2113945D002B6505 /* MigrationPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationPolicy.swift; sourceTree = "<group>"; };
 		FE3E00AF211EACAA002B6505 /* UrlParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlParser.swift; sourceTree = "<group>"; };
+		FE84E10B214D0FA800F26288 /* LoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewController.swift; sourceTree = "<group>"; };
 		FEEACFB32143B0BD003738DD /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		FEEACFB52143B0E2003738DD /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		FEEACFB72143B30C003738DD /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
@@ -98,9 +100,18 @@
 			path = "Core Data";
 			sourceTree = "<group>";
 		};
+		FE84E10A214D0F8600F26288 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FE84E10B214D0FA800F26288 /* LoaderViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		FEEACFB22143B076003738DD /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FE84E10A214D0F8600F26288 /* Controllers */,
 				FEEACFB32143B0BD003738DD /* TabBarViewController.swift */,
 				FEEACFB52143B0E2003738DD /* TabBarItem.swift */,
 				FEEACFB92143B44D003738DD /* TabBar.swift */,
@@ -186,6 +197,7 @@
 				FEEACFB62143B0E2003738DD /* TabBarItem.swift in Sources */,
 				FE3E009521139051002B6505 /* Migration.xcdatamodeld in Sources */,
 				FE3E00AE2113945D002B6505 /* MigrationPolicy.swift in Sources */,
+				FE84E10C214D0FA800F26288 /* LoaderViewController.swift in Sources */,
 				FE3E008D21139051002B6505 /* AppDelegate.swift in Sources */,
 				FEEACFBA2143B44D003738DD /* TabBar.swift in Sources */,
 				FE3E00AC21139450002B6505 /* MappingModel.xcmappingmodel in Sources */,
