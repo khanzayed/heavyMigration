@@ -22,29 +22,29 @@ class LoaderViewController: UIViewController {
     var imageView8 : UIImageView!
     var imageView9 : UIImageView!
     
-    let smallValue : CGFloat = 20
-    let mediumValue : CGFloat = 30
-    let largeValue : CGFloat = 50
-    let xlargeValue : CGFloat = 70
+    let smallValue : CGFloat = 30
+    let mediumValue : CGFloat = 60
+    let largeValue : CGFloat = 90
+//    let xlargeValue : CGFloat = 70
     let height : CGFloat = UIScreen.main.bounds.height
     let width : CGFloat = UIScreen.main.bounds.width
-    let edge : CGFloat = 10
+    let edge : CGFloat = 50
     
-    let leftMargin : CGFloat = 30
-    let topMargin : CGFloat = 100
+//    let leftMargin : CGFloat = 30
+//    let topMargin : CGFloat = 100
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        let animationAreaDimension : CGFloat = width - (leftMargin * 2)
-        imageAnimatinArea = UIView(frame: CGRect(x: leftMargin, y: topMargin, width: animationAreaDimension, height: animationAreaDimension))
-        imageAnimatinArea.backgroundColor = UIColor(hexString: "F1F1F1")
+//        let animationAreaDimension : CGFloat = width - (leftMargin * 2)
+//        imageAnimatinArea = UIView(frame: CGRect(x: leftMargin, y: topMargin, width: animationAreaDimension, height: animationAreaDimension))
+//        imageAnimatinArea.backgroundColor = UIColor(hexString: "F1F1F1")
+//
+//        self.view.addSubview(imageAnimatinArea)
+//
+//        return
         
-        self.view.addSubview(imageAnimatinArea)
-        
-        return
-        
-        imageView1 = UIImageView(frame: CGRect(x: animationAreaDimension - xlargeValue - edge, y: (height - largeValue) / 2 - (edge * 2), width: largeValue, height: largeValue))
+        imageView1 = UIImageView(frame: CGRect(x: width - largeValue - edge, y: (height - largeValue) / 2 - (edge * 2), width: largeValue, height: largeValue))
         imageView1.image = UIImage(named: "1")
         
         imageView2 = UIImageView(frame: CGRect(x: edge * 3, y: ((height - smallValue) / 2) - (edge * 4), width: smallValue, height: smallValue))
@@ -91,7 +91,7 @@ class LoaderViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-//        animateViews()
+        animateViews()
     }
 
     override func didReceiveMemoryWarning() {
