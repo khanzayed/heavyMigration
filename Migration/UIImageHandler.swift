@@ -59,6 +59,38 @@ class UIIImageHandler {
         return dataPath
     }
     
+    internal func getProfileImageFromDocumentsDirectory(_ fileName : String, completion : (UIImage?) -> Void) {
+        queue.sync {
+            guard let path = getDocumentsDirectoryForProfiles() else {
+                return
+            }
+            
+            let filePath = path.appendingPathComponent("\(fileName).png")
+            if FileManager.default.fileExists(atPath: filePath.path), let image = UIImage(contentsOfFile: filePath.path) {
+                completion(image)
+            } else {
+                print("File do not exist")
+                completion(nil)
+            }
+        }
+    }
+    
+    internal func getChatImageFromDocumentsDirectory(_ thread : String, fileName : String, completion : (UIImage?) -> Void) {
+        queue.sync {
+            guard let path = getDocumentsDirectoryForChatThread(thread) else {
+                return
+            }
+            
+            let filePath = path.appendingPathComponent("\(fileName).png")
+            if FileManager.default.fileExists(atPath: filePath.path), let image = UIImage(contentsOfFile: filePath.path) {
+                completion(image)
+            } else {
+                print("File do not exist")
+                completion(nil)
+            }
+        }
+    }
+    
     internal func saveImageToDocumentDirectory(_ image : UIImage, forDirectoryName : FileDirectoryName, chatThread : String? = nil, fileName : String) {
         queue.sync {
             switch forDirectoryName {

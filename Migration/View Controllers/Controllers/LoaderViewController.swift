@@ -36,14 +36,23 @@ class LoaderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        let animationAreaDimension : CGFloat = width - (leftMargin * 2)
-        imageAnimatinArea = UIView(frame: CGRect(x: leftMargin, y: topMargin, width: animationAreaDimension, height: animationAreaDimension))
-        imageAnimatinArea.backgroundColor = UIColor(hexString: "F1F1F1")
-
-        self.view.addSubview(imageAnimatinArea)
+//        let animationAreaDimension : CGFloat = width - (leftMargin * 2)
+//        imageAnimatinArea = UIView(frame: CGRect(x: leftMargin, y: topMargin, width: animationAreaDimension, height: animationAreaDimension))
+//        imageAnimatinArea.backgroundColor = UIColor(hexString: "F1F1F1")
+//
+//        self.view.addSubview(imageAnimatinArea)
         
 //        UIIImageHandler.shared.saveImageToDocumentDirectory(UIImage(named: "1")!, forDirectoryName: .ProfileImages, fileName: "faraz")
-        UIIImageHandler.shared.removeProfileImageFromDocumentDirectory("faraz")
+//        UIIImageHandler.shared.removeProfileImageFromDocumentDirectory("faraz")
+        self.imageView1 = UIImageView(frame:CGRect(x: 10, y: 100, width: 50, height: 50))
+//        self.imageView1.image = UIImage(named: "1")
+        self.view.addSubview(self.imageView1)
+        
+        UIIImageHandler.shared.getProfileImageFromDocumentsDirectory("faraz") { (image) in
+            DispatchQueue.main.async {
+                self.imageView1.image = image
+            }
+        }
         
 //        imageView1 = UIImageView(frame: CGRect(x: width - largeValue - edge, y: (height - largeValue) / 2 - (edge * 2), width: largeValue, height: largeValue))
 //        imageView1.image = UIImage(named: "1")
