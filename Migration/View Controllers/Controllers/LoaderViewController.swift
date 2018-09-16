@@ -42,6 +42,9 @@ class LoaderViewController: UIViewController {
 
         self.view.addSubview(imageAnimatinArea)
         
+//        UIIImageHandler.shared.saveImageToDocumentDirectory(UIImage(named: "1")!, forDirectoryName: .ProfileImages, fileName: "faraz")
+        UIIImageHandler.shared.removeProfileImageFromDocumentDirectory("faraz")
+        
 //        imageView1 = UIImageView(frame: CGRect(x: width - largeValue - edge, y: (height - largeValue) / 2 - (edge * 2), width: largeValue, height: largeValue))
 //        imageView1.image = UIImage(named: "1")
 //

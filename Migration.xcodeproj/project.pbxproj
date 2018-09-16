@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE381603214E634600262B8E /* UIImageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE381602214E634600262B8E /* UIImageHandler.swift */; };
 		FE3E008D21139051002B6505 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3E008C21139051002B6505 /* AppDelegate.swift */; };
 		FE3E009221139051002B6505 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE3E009021139051002B6505 /* Main.storyboard */; };
 		FE3E009521139051002B6505 /* Migration.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE3E009321139051002B6505 /* Migration.xcdatamodeld */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE381602214E634600262B8E /* UIImageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageHandler.swift; sourceTree = "<group>"; };
 		FE3E008921139051002B6505 /* Migration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Migration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE3E008C21139051002B6505 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE3E009121139051002B6505 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				FE3E009821139052002B6505 /* LaunchScreen.storyboard */,
 				FE3E009B21139052002B6505 /* Info.plist */,
 				FEEACFB72143B30C003738DD /* AppColors.swift */,
+				FE381602214E634600262B8E /* UIImageHandler.swift */,
 			);
 			path = Migration;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				FE3E00B0211EACAA002B6505 /* UrlParser.swift in Sources */,
 				FEEACFB82143B30C003738DD /* AppColors.swift in Sources */,
 				FEEACFB62143B0E2003738DD /* TabBarItem.swift in Sources */,
+				FE381603214E634600262B8E /* UIImageHandler.swift in Sources */,
 				FE3E009521139051002B6505 /* Migration.xcdatamodeld in Sources */,
 				FE3E00AE2113945D002B6505 /* MigrationPolicy.swift in Sources */,
 				FE84E10C214D0FA800F26288 /* LoaderViewController.swift in Sources */,
