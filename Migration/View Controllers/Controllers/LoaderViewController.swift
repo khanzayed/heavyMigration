@@ -9,7 +9,10 @@
 import UIKit
 
 class LoaderViewController: UIViewController {
-
+    
+    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var loadingLbl: UILabel!
+    
     var imageAnimatinArea : UIView!
     
     var imageView1 : UIImageView!
@@ -44,64 +47,26 @@ class LoaderViewController: UIViewController {
         
 //        UIIImageHandler.shared.saveImageToDocumentDirectory(UIImage(named: "1")!, forDirectoryName: .ProfileImages, fileName: "faraz")
 //        UIIImageHandler.shared.removeProfileImageFromDocumentDirectory("faraz")
-        self.imageView1 = UIImageView(frame:CGRect(x: 10, y: 100, width: 50, height: 50))
+//        self.imageView1 = UIImageView(frame:CGRect(x: 10, y: 100, width: 50, height: 50))
 //        self.imageView1.image = UIImage(named: "1")
-        self.view.addSubview(self.imageView1)
+//        self.view.addSubview(self.imageView1)
+//
+//        UIIImageHandler.shared.getProfileImageFromDocumentsDirectory("faraz") { (image) in
+//            DispatchQueue.main.async {
+//                self.imageView1.image = image
+//            }
+//        }
         
-        UIIImageHandler.shared.getProfileImageFromDocumentsDirectory("faraz") { (image) in
-            DispatchQueue.main.async {
-                self.imageView1.image = image
-            }
-        }
+        setupImages()
         
-//        imageView1 = UIImageView(frame: CGRect(x: width - largeValue - edge, y: (height - largeValue) / 2 - (edge * 2), width: largeValue, height: largeValue))
-//        imageView1.image = UIImage(named: "1")
-//
-//        imageView2 = UIImageView(frame: CGRect(x: edge * 3, y: ((height - smallValue) / 2) - (edge * 4), width: smallValue, height: smallValue))
-//        imageView2.image = UIImage(named: "1")
-//
-//        imageView3 = UIImageView(frame: CGRect(x: edge, y: ((height - mediumValue) / 2), width: mediumValue, height: mediumValue))
-//        imageView3.image = UIImage(named: "1")
-//
-//        imageView4 = UIImageView(frame: CGRect(x: width - largeValue - edge - 10, y: (height - largeValue) / 2 + (largeValue) * 2 - (edge * 2), width: largeValue, height: largeValue))
-//        imageView4.image = UIImage(named: "1")
-//        imageView4.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-//
-//        imageView5 = UIImageView(frame: CGRect(x: edge - 20, y: ((height - mediumValue) / 2) + (edge * 2) + edge, width: mediumValue, height: mediumValue))
-//        imageView5.image = UIImage(named: "1")
-//        imageView5.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-//
-//        imageView6 = UIImageView(frame: CGRect(x: mediumValue + edge, y: (height - mediumValue) / 2, width: mediumValue, height: mediumValue))
-//        imageView6.image = UIImage(named: "1")
-//        imageView6.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-//
-//        imageView7 = UIImageView(frame: CGRect(x: (width - largeValue) / 2, y: (height - largeValue) / 2 - (edge * 3), width: largeValue, height: largeValue))
-//        imageView7.image = UIImage(named: "1")
-//        imageView7.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-//
-//        imageView8 = UIImageView(frame: CGRect(x: width - mediumValue - edge, y: (height - mediumValue) / 2 - (edge * 5), width: mediumValue, height: mediumValue))
-//        imageView8.image = UIImage(named: "1")
-//        imageView8.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-//
-//        imageView9 = UIImageView(frame: CGRect(x: edge - 20, y: (height - largeValue) / 2 - (edge * 4.5), width: largeValue, height: largeValue))
-//        imageView9.image = UIImage(named: "1")
-//        imageView9.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-//
-//        self.view.addSubview(imageView1)
-//        self.view.addSubview(imageView2)
-//        self.view.addSubview(imageView3)
-//        self.view.addSubview(imageView4)
-//        self.view.addSubview(imageView5)
-//        self.view.addSubview(imageView6)
-//        self.view.addSubview(imageView7)
-//        self.view.addSubview(imageView8)
-//        self.view.addSubview(imageView9)
+        animateViews(value: 1.0)
+        animateLabel(value: 1.0)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-//        animateViews()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -109,9 +74,56 @@ class LoaderViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    private func animateViews() {
+    private func setupImages() {
+        imageView1 = UIImageView(frame: CGRect(x: width - largeValue - edge, y: (height - largeValue) / 2 - (edge * 2) - 50, width: largeValue, height: largeValue))
+        imageView1.image = UIImage(named: "1")
+        
+        imageView2 = UIImageView(frame: CGRect(x: edge * 3, y: ((height - smallValue) / 2) - (edge * 4) - 50, width: smallValue, height: smallValue))
+        imageView2.image = UIImage(named: "1")
+        
+        imageView3 = UIImageView(frame: CGRect(x: edge, y: ((height - mediumValue) / 2) - 50, width: mediumValue, height: mediumValue))
+        imageView3.image = UIImage(named: "1")
+        
+        imageView4 = UIImageView(frame: CGRect(x: width - largeValue - edge - 10, y: (height - largeValue) / 2 + (largeValue) * 2 - (edge * 2) - 50, width: largeValue, height: largeValue))
+        imageView4.image = UIImage(named: "1")
+        imageView4.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+        
+        imageView5 = UIImageView(frame: CGRect(x: edge - 20, y: ((height - mediumValue) / 2) + (edge * 2) + edge - 50, width: mediumValue, height: mediumValue))
+        imageView5.image = UIImage(named: "1")
+        imageView5.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+        
+        imageView6 = UIImageView(frame: CGRect(x: mediumValue + edge, y: (height - mediumValue) / 2 - 50, width: mediumValue, height: mediumValue))
+        imageView6.image = UIImage(named: "1")
+        imageView6.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+        
+//        imageView7 = UIImageView(frame: CGRect(x: (width - largeValue) / 2, y: (height - largeValue) / 2 - (edge * 3) - 50, width: largeValue, height: largeValue))
+//        imageView7.image = UIImage(named: "1")
+//        imageView7.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+        
+//        imageView8 = UIImageView(frame: CGRect(x: width - mediumValue - edge, y: (height - mediumValue) / 2 - (edge * 5) - 50, width: mediumValue, height: mediumValue))
+//        imageView8.image = UIImage(named: "1")
+//        imageView8.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+        
+        imageView9 = UIImageView(frame: CGRect(x: edge - 20, y: (height - largeValue) / 2 - (edge * 4.5) - 50, width: largeValue, height: largeValue))
+        imageView9.image = UIImage(named: "1")
+        imageView9.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+        
+        self.view.addSubview(imageView1)
+        self.view.addSubview(imageView2)
+        self.view.addSubview(imageView3)
+        self.view.addSubview(imageView4)
+        self.view.addSubview(imageView5)
+        self.view.addSubview(imageView6)
+//        self.view.addSubview(imageView7)
+//        self.view.addSubview(imageView8)
+        self.view.addSubview(imageView9)
+
+    }
+    
+    private func animateViews(value : TimeInterval) {
         let duration : TimeInterval = 0.4
-        var delay : TimeInterval = 1.0
+        var delay : TimeInterval = value
+        let extra : TimeInterval = 0.3
         
         UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseInOut, animations: {
             self.imageView4.transform = CGAffineTransform(scaleX: 1, y: 1)
@@ -119,124 +131,156 @@ class LoaderViewController: UIViewController {
             
         })
         
-        delay += 0.3
+        delay += extra
         UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
             self.imageView1.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
         },  completion: { (true) in
             
         })
         
-        delay += 0.3
+        delay += extra
         UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
             self.imageView5.transform = CGAffineTransform(scaleX: 1, y: 1)
         },  completion: { (true) in
             
         })
         
-        delay += 0.3
+        delay += extra
         UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
             self.imageView3.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
         },  completion: { (true) in
             
         })
         
-        delay += 0.3
+        delay += extra
         UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
             self.imageView6.transform = CGAffineTransform(scaleX: 1, y: 1)
         },  completion: { (true) in
             
         })
         
-        delay += 0.3
+        delay += extra
         UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
             self.imageView2.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
         },  completion: { (true) in
             
         })
         
-        delay += 0.3
-        UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
-            self.imageView7.transform = CGAffineTransform(scaleX: 1, y: 1)
-        },  completion: { (true) in
-            
-        })
+//        delay += extra
+//        UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
+//            self.imageView7.transform = CGAffineTransform(scaleX: 1, y: 1)
+//        },  completion: { (true) in
+//
+//        })
         
-        delay += 0.3
+        delay += extra
         UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
             self.imageView4.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
         },  completion: { (true) in
             
         })
         
-        delay += 0.3
-        UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
-            self.imageView8.transform = CGAffineTransform(scaleX: 1, y: 1)
-        },  completion: { (true) in
-            
-        })
+//        delay += extra
+//        UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
+//            self.imageView8.transform = CGAffineTransform(scaleX: 1, y: 1)
+//        },  completion: { (true) in
+//
+//        })
         
-        delay += 0.3
+        delay += extra
         UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
             self.imageView5.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
         },  completion: { (true) in
             
         })
         
-        delay += 0.3
+        delay += extra
         UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
             self.imageView9.transform = CGAffineTransform(scaleX: 1, y: 1)
         },  completion: { (true) in
             
         })
         
-        delay += 0.3
+        delay += extra
         UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
             self.imageView6.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
         },  completion: { (true) in
             
         })
         
-        delay += 0.3
+        delay += extra
         UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
             self.imageView1.transform = CGAffineTransform(scaleX: 1, y: 1)
         },  completion: { (true) in
             
         })
         
-        delay += 0.3
-        UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
-            self.imageView7.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-        },  completion: { (true) in
-            
-        })
+//        delay += extra
+//        UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
+//            self.imageView7.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+//        },  completion: { (true) in
+//
+//        })
         
-        delay += 0.3
+        delay += extra
         UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
             self.imageView3.transform = CGAffineTransform(scaleX: 1, y: 1)
         },  completion: { (true) in
             
         })
         
-        delay += 0.3
-        UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
-            self.imageView8.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-        },  completion: { (true) in
-            
-        })
+//        delay += extra
+//        UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
+//            self.imageView8.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+//        },  completion: { (true) in
+//
+//        })
         
-        delay += 0.3
+        delay += extra
         UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
             self.imageView2.transform = CGAffineTransform(scaleX: 1, y: 1)
         },  completion: { (true) in
-            
+        
         })
         
-        delay += 0.3
+        delay += extra
         UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
             self.imageView9.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
         },  completion: { (true) in
-            
+            delay = 0
+            self.animateViews(value: delay)
         })
+        
+    }
+    
+    func animateLabel(value : TimeInterval) {
+        UIView.animate(withDuration: 0.5, delay: value, options: .curveEaseIn, animations: {
+            self.titleLbl.alpha = 0
+        }) { (true) in
+            self.titleLbl.text = "Finding Professionals"
+            self.loadingLbl.text = "Loading.."
+            UIView.animate(withDuration: 0.3, delay: 0.3, options: .curveEaseIn, animations: {
+                self.titleLbl.alpha = 1
+            }, completion: { (true) in
+                UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseIn, animations: {
+                    self.titleLbl.alpha = 0
+                }, completion: { (true) in
+                    self.titleLbl.text = "Matching Objectives"
+                    self.loadingLbl.text = "Loading..."
+                    UIView.animate(withDuration: 0.3, delay: 0.3, options: .curveEaseIn, animations: {
+                        self.titleLbl.alpha = 1
+                    }, completion: { (true) in
+                        UIView.animate(withDuration: 0.3, delay: 0.3, options: .curveEaseIn, animations: {
+                            self.titleLbl.alpha = 0
+                        }, completion: { (true) in
+                            self.loadingLbl.text = "Loading."
+                            self.titleLbl.text = "Fetching Location"
+                            self.animateLabel(value: 0.5)
+                        })
+                    })
+                })
+            })
+        }
     }
     
 

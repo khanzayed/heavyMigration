@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -81,14 +80,54 @@
                     <view key="view" contentMode="scaleToFill" id="fyp-dg-9U7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fetching Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXk-UY-HgY">
+                                <rect key="frame" x="41" y="455" width="184.5" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="JCb-4T-R2p"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" red="0.16470588235294117" green="0.42352941176470588" blue="0.6470588235294118" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TGL-Cr-jDD">
+                                <rect key="frame" x="40" y="491" width="294" height="2"/>
+                                <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="iwn-0h-Jrl"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfA-Mw-hV6">
+                                <rect key="frame" x="40" y="503" width="45" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="19" id="1GM-ur-VcB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" red="0.14117647058823529" green="0.14901960784313725" blue="0.20000000000000001" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4B1-jn-Szb" firstAttribute="bottom" secondItem="gXk-UY-HgY" secondAttribute="bottom" constant="135" id="3Zb-ZL-Mzh"/>
+                            <constraint firstAttribute="trailing" secondItem="TGL-Cr-jDD" secondAttribute="trailing" constant="41" id="ApE-Q4-38q"/>
+                            <constraint firstItem="gXk-UY-HgY" firstAttribute="leading" secondItem="4B1-jn-Szb" secondAttribute="leading" constant="41" id="I4r-FV-hYv"/>
+                            <constraint firstItem="TGL-Cr-jDD" firstAttribute="leading" secondItem="fyp-dg-9U7" secondAttribute="leading" constant="40" id="MzZ-Ze-cqc"/>
+                            <constraint firstItem="bfA-Mw-hV6" firstAttribute="leading" secondItem="4B1-jn-Szb" secondAttribute="leading" constant="40" id="ol0-FL-bU7"/>
+                            <constraint firstItem="4B1-jn-Szb" firstAttribute="bottom" secondItem="bfA-Mw-hV6" secondAttribute="bottom" constant="96" id="uvx-uv-9Bp"/>
+                            <constraint firstItem="4B1-jn-Szb" firstAttribute="bottom" secondItem="TGL-Cr-jDD" secondAttribute="bottom" constant="125" id="wCa-rj-Ihc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4B1-jn-Szb"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" image="ic_events_deselected" selectedImage="ic_events_selected" id="5Hb-Gz-ds8" customClass="TabBarItem" customModule="Migration" customModuleProvider="target"/>
+                    <connections>
+                        <outlet property="loadingLbl" destination="bfA-Mw-hV6" id="CKy-ZH-e6X"/>
+                        <outlet property="titleLbl" destination="gXk-UY-HgY" id="zyx-X4-71W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n16-9m-IfP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="384" y="-423"/>
+            <point key="canvasLocation" x="383.19999999999999" y="-423.23838080959524"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="FdB-cE-G4f">
