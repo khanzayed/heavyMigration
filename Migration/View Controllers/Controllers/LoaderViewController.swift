@@ -35,302 +35,84 @@ class LoaderViewController: UIViewController {
     let leftMargin : CGFloat = 30
     let topMargin : CGFloat = 100
     
+    fileprivate let searchController = UISearchController(searchResultsController: nil)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        let editButtonn = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(LoaderViewController.setupController))
+        navigationItem.rightBarButtonItem = editButtonn
         
+        self.searchController.obscuresBackgroundDuringPresentation = false
+        self.searchController.searchBar.placeholder = "Search"
+        self.searchController.searchBar.barStyle = .black
+        self.searchController.searchBar.delegate = self
+        self.searchController.searchBar.showsCancelButton = true
+        self.definesPresentationContext = true
         
-//        UIIImageHandler.shared.saveImageToDocumentDirectory(UIImage(named: "1")!, forDirectoryName: .ProfileImages, fileName: "faraz")
-//        UIIImageHandler.shared.removeProfileImageFromDocumentDirectory("faraz")
-//        self.imageView1 = UIImageView(frame:CGRect(x: 10, y: 100, width: 50, height: 50))
-//        self.imageView1.image = UIImage(named: "1")
-//        self.view.addSubview(self.imageView1)
-//
-//        UIIImageHandler.shared.getProfileImageFromDocumentsDirectory("faraz") { (image) in
-//            DispatchQueue.main.async {
-//                self.imageView1.image = image
-//            }
-//        }
-        
-        setupImages()
-        
-        animateViews(value: 1.0)
-        animateLabel(value: 1.0)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        
     }
+    
+    @objc func setupController() {
+        UIView.animate(withDuration: 0.3) {
+            self.navigationItem.searchController = self.searchController
+            self.searchController.searchBar.becomeFirstResponder()
+        }
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    private func setupImages() {
-        let animationAreaDimension : CGFloat = width - (leftMargin * 2)
-        let centerPoint = CGPoint(x: animationAreaDimension / 2 - 30, y: animationAreaDimension / 2 - 50)
-        
-        imageView1 = UIImageView(frame: CGRect(x: centerPoint.x + 80, y: centerPoint.y + 80, width: largeValue, height: largeValue))
-        imageView1.image = UIImage(named: "1")
-        
-        imageView2 = UIImageView(frame: CGRect(x: centerPoint.x - 100, y: centerPoint.y - 100, width: mediumValue, height: mediumValue))
-        imageView2.image = UIImage(named: "1")
-        
-//        imageView3 = UIImageView(frame: CGRect(x: centerPoint.x + 100, y: centerPoint.y, width: smallValue, height: smallValue))
-//        imageView3.image = UIImage(named: "1")
-        
-        imageView4 = UIImageView(frame: CGRect(x: centerPoint.x + 30, y: centerPoint.y, width: mediumValue, height: mediumValue))
-        imageView4.image = UIImage(named: "1")
-        
-        imageView5 = UIImageView(frame: CGRect(x: centerPoint.x + 80, y: centerPoint.y - 100, width: mediumValue, height: mediumValue))
-        imageView5.image = UIImage(named: "1")
-        imageView5.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-        
-        imageView6 = UIImageView(frame: CGRect(x: centerPoint.x - 100, y: centerPoint.y + 100, width: xlargeValue, height: xlargeValue))
-        imageView6.image = UIImage(named: "1")
-        imageView6.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-        
-        imageView7 = UIImageView(frame: CGRect(x: centerPoint.x - 80, y: centerPoint.y + 80, width: largeValue, height: largeValue))
-        imageView7.image = UIImage(named: "1")
-        imageView7.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-        
-//        imageView8 = UIImageView(frame: CGRect(x: width - mediumValue - edge, y: (height - mediumValue) / 2 - (edge * 5) - 50, width: mediumValue, height: mediumValue))
-//        imageView8.image = UIImage(named: "1")
-//        imageView8.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-        
-        imageView9 = UIImageView(frame: CGRect(x: centerPoint.x + 80, y: centerPoint.y - 80, width: mediumValue, height: mediumValue))
-        imageView9.image = UIImage(named: "1")
-        imageView9.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-        
-        self.imageAnimatinArea.addSubview(imageView1)
-        self.imageAnimatinArea.addSubview(imageView2)
-//        self.imageAnimatinArea.addSubview(imageView3)
-        self.imageAnimatinArea.addSubview(imageView4)
-        self.imageAnimatinArea.addSubview(imageView5)
-        self.imageAnimatinArea.addSubview(imageView6)
-        self.imageAnimatinArea.addSubview(imageView7)
-//        self.imageAnimatinArea.addSubview(imageView8)
-        self.imageAnimatinArea.addSubview(imageView9)
+}
 
-    }
-    
-    private func animateViews(value : TimeInterval) {
-        let duration : TimeInterval = 0.4
-        var delay : TimeInterval = value
-        let extra : TimeInterval = 0.3
-        
-        UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseInOut, animations: {
-            self.imageView4.transform = CGAffineTransform(scaleX: 1, y: 1)
-        }, completion: { (true) in
-            
-        })
-        
-        delay += extra
-        UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
-            self.imageView1.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-        },  completion: { (true) in
-            
-        })
-        
-        delay += extra
-        UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
-            self.imageView5.transform = CGAffineTransform(scaleX: 1, y: 1)
-        },  completion: { (true) in
-            
-        })
-        
-//        delay += extra
-//        UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
-//            self.imageView3.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-//        },  completion: { (true) in
-//
-//        })
-        
-        delay += extra
-        UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
-            self.imageView6.transform = CGAffineTransform(scaleX: 1, y: 1)
-        },  completion: { (true) in
-            
-        })
-        
-        delay += extra
-        UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
-            self.imageView2.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-        },  completion: { (true) in
-            
-        })
-        
-//        delay += extra
-//        UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
-//            self.imageView7.transform = CGAffineTransform(scaleX: 1, y: 1)
-//        },  completion: { (true) in
-//
-//        })
-        
-        delay += extra
-        UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
-            self.imageView4.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-        },  completion: { (true) in
-            
-        })
-        
-//        delay += extra
-//        UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
-//            self.imageView8.transform = CGAffineTransform(scaleX: 1, y: 1)
-//        },  completion: { (true) in
-//
-//        })
-        
-        delay += extra
-        UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
-            self.imageView5.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-        },  completion: { (true) in
-            
-        })
-        
-        delay += extra
-        UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
-            self.imageView9.transform = CGAffineTransform(scaleX: 1, y: 1)
-        },  completion: { (true) in
-            
-        })
-        
-        delay += extra
-        UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
-            self.imageView6.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-        },  completion: { (true) in
-            
-        })
-        
-        delay += extra
-        UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
-            self.imageView1.transform = CGAffineTransform(scaleX: 1, y: 1)
-        },  completion: { (true) in
-            
-        })
-        
-//        delay += extra
-//        UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
-//            self.imageView7.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-//        },  completion: { (true) in
-//
-//        })
-        
-//        delay += extra
-//        UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
-//            self.imageView3.transform = CGAffineTransform(scaleX: 1, y: 1)
-//        },  completion: { (true) in
-//
-//        })
-        
-//        delay += extra
-//        UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
-//            self.imageView8.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-//        },  completion: { (true) in
-//
-//        })
-        
-        delay += extra
-        UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
-            self.imageView2.transform = CGAffineTransform(scaleX: 1, y: 1)
-        },  completion: { (true) in
-        
-        })
-        
-        delay += extra
-        UIView.animate(withDuration: duration , delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
-            self.imageView9.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-        },  completion: { (true) in
-            delay = 0
-            self.animateViews(value: delay)
-        })
-        
-    }
-    
-    func animateLabel(value : TimeInterval) {
 
-        UIView.animate(withDuration: 0.5, delay: value, options: .curveEaseIn, animations: {
-            self.titleLbl.alpha = 0
-        }) { (true) in
-            
-            self.loadingLbl.text = "Loading."
-            self.titleLbl.text = "Fetching Location"
-            
-            UIView.animate(withDuration: 0.3, delay: 0.2, options: .curveEaseIn, animations: {
-                self.titleLbl.alpha = 1
-            }) { (true) in
-                UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseIn, animations: {
-                    self.titleLbl.alpha = 0
-                }) { (true) in
-                    
-                    self.titleLbl.text = "Finding Professionals"
-                    self.loadingLbl.text = "Loading.."
-                    
-                    UIView.animate(withDuration: 0.3, delay: 0.2, options: .curveEaseIn, animations: {
-                        self.titleLbl.alpha = 1
-                    }) { (true) in
-                        UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseIn, animations: {
-                            self.titleLbl.alpha = 0
-                        }) { (true) in
-                            
-                            self.titleLbl.text = "Matching Objectives"
-                            self.loadingLbl.text = "Loading..."
-                            
-                            UIView.animate(withDuration: 0.3, delay: 0.2, options: .curveEaseIn, animations: {
-                                self.titleLbl.alpha = 1
-                            }) { (true) in
-                                self.animateLabel(value: 0.3)
-//                                UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseIn, animations: {
-//                                    self.titleLbl.alpha = 0
-//                                }) { (true) in
-//                                    self.animateLabel(value: 0)
-//                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+extension LoaderViewController: UISearchBarDelegate
+{
+//    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar)
+//    {
+//        //Show Cancel
+//        searchBar.setShowsCancelButton(true, animated: true)
+////        searchBar.tintColor = .white
+//    }
+//
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
+//    {
+//        //Filter function
+////        self.filterFunction(searchText: searchText)
+//    }
+//
+//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar)
+//    {
+//        //Hide Cancel
+////        searchBar.setShowsCancelButton(false, animated: true)
+//        searchBar.resignFirstResponder()
+//
+////        guard let term = searchBar.text , term.trim().isEmpty == false else {
+////
+////            //Notification "White spaces are not permitted"
+////            return
+////        }
+////
+//        //Filter function
+////        self.filterFunction(searchText: term)
+//    }
+//
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar)
+    {
+        searchBar.resignFirstResponder()
+        searchBar.text = ""
         
-//        UIView.animate(withDuration: 0.5, delay: value, options: .curveEaseIn, animations: {
-//            self.titleLbl.alpha = 0
-//        }) { (true) in
-//            self.titleLbl.text = "Finding Professionals"
-//            self.loadingLbl.text = "Loading.."
-//            UIView.animate(withDuration: 0.3, delay: 0.3, options: .curveEaseIn, animations: {
-//                self.titleLbl.alpha = 1
-//            }, completion: { (true) in
-//                UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseIn, animations: {
-//                    self.titleLbl.alpha = 0
-//                }, completion: { (true) in
-//                    self.titleLbl.text = "Matching Objectives"
-//                    self.loadingLbl.text = "Loading..."
-//                    UIView.animate(withDuration: 0.3, delay: 0.3, options: .curveEaseIn, animations: {
-//                        self.titleLbl.alpha = 1
-//                    }, completion: { (true) in
-//                        UIView.animate(withDuration: 0.3, delay: 0.3, options: .curveEaseIn, animations: {
-//                            self.titleLbl.alpha = 0
-//                        }, completion: { (true) in
-//                            self.animateLabel(value: 1.0)
-//                        })
-//                    })
-//                })
-//            })
+        self.navigationItem.searchController = nil
+        
+//        UIView.animate(withDuration: 0.3) {
+//            self.navigationItem.searchController = nil
 //        }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
